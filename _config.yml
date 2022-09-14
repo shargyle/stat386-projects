@@ -21,10 +21,10 @@
 title: Data Science Projects # Make a title for your blog
 email: shargyle7@email.com # Add your email 
 description: >- # this means to ignore newlines until "baseurl:"
- Change the description so that it describes your blog
+ This blog contains data science projects I have done in STAT 386.
 baseurl: "/stat386-projects" # keep this the same or change it to the name of the repository 
 url: "https://shargyle.github.io" #  change this to "https://<your-github-username>.github.io"
-image: "assets/images/image5.jpg"
+image: "assets/images/pramod-tiwari-8VoKORoCg-s-unsplash.jpg"
 author: Seth Argyle
 copyright: SHA # Your initials or what you want the copyright to be.  Leave empty for no copyright
 
