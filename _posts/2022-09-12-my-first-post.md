@@ -23,10 +23,6 @@ greeting = 'Hello world!'
 print(greeting)
 ```
 
-Let's try a footnote. [^1]
-
-[^1]: There we go.
-
 - [x] Make my first blog post on GitHub Pages.
 
 
