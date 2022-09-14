@@ -27,8 +27,6 @@ Let's try a footnote. [^1]
 
 [^1]: There we go.
 
-Emojis! :joy:
-
-A ==highlight==.
+- [x] Make my first blog post on GitHub Pages.
 
 
