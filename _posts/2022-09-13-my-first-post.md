@@ -3,7 +3,7 @@ layout: post
 title:  "My First Post"
 author: Seth Argyle
 description: This post explores different types of text in Markdown and images.
-image: /assets/images/2022-09-13/first-blog-post.jpg
+image: /assets/images/2022-09-12/first-blog-post.jpg
 ---
 
 # This is a large heading
