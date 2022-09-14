@@ -12,7 +12,7 @@ image: /assets/images/2022-09-12/first-blog-post.jpg
 
 ### This is a small heading
 
-**Here's some bold text**
+**Here's some bold text**\
 *And some italicized text*
 
 > This is a blockquote
