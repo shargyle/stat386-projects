@@ -34,6 +34,15 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
+  
+  <script src="https://utteranc.es/client.js"
+        repo="shargyle/stat386-projects"
+        issue-term="pathname"
+        label="💬"
+        theme="boxy-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
