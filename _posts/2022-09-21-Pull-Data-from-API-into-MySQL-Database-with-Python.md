@@ -2,7 +2,7 @@
 layout: post
 title:  "Pull Data from API into MySQL Database with Python"
 author: Seth Argyle
-description: This tutorial shows how to use python to pull data from an API and store it in tables in a MySQL database.
+description: This tutorial shows how to use Python to pull data from an API and store it in tables in a MySQL database.
 image: /assets/images/database.jpg
 ---
 
@@ -17,7 +17,6 @@ import requests
 import json
 import pandas as pd
 from sqlalchemy import create_engine
-import pymysql
 ```
 
 ### API Call
@@ -27,11 +26,10 @@ The requests and json packages enable the user to import data from an API. All y
 
 The following code pulls data from the API and stores it in a pandas dataframe called 'df':
 ```
-### url components
 security = 'BTCUSD'
 url = 'https://api.polygon.io/v2/aggs/ticker/X:' + security + '/range/1/minute/2022-09-27/2022-09-27?adjusted=true&sort=asc&limit=1500&apiKey=' + api_key
-
-### call API, store as pandas df
+```
+```
 response = requests.request('GET', url)
 data = json.loads(response.text)
 df = pd.DataFrame(data['results'])
@@ -39,17 +37,31 @@ df = pd.DataFrame(data['results'])
 
 Oftentimes, the naming conventions pulled from the API are vague. Here, I simply change the column names to be more intuitive:
 ```
-### rename columns
 df = df.rename(columns={'v':'trading_volume', 'vw':'volume_weighted_avg_price', 'o':'open_price', 'c':'close_price', 'h':'high', 'l':'low', 't':'unix_timestamp_msec', 'n':'num_transactions'})
 ```
 
-`pandas`'s `to_datetime()` method enables the user to convert a timestamp from unix to readable datetimes. Here, I add a column to my dataframe called `date_timestamp` that includes a datetime version of the unix timestamp (in Msec).
+pandas `to_datetime()` function enables the user to convert a timestamp from unix to readable datetimes. Here, I add a column to my dataframe called `date_timestamp` that includes a datetime version of the unix timestamp (in Msec).
 ```
-### add column: unix timestamp --> datetime
 df['date_timestamp'] = pd.to_datetime(df['unix_timestamp_msec'], unit='ms')
 ```
 
 ### Store pandas dataframe as table in MySQL database
-
+Now onto writing the pandas dataframe to a table in an SQL database. The `create_engine()` function from the sqlalchemy package and pandas dataframe `to_sql()` method can be used to create a connection with an existing SQL database and then write the dataframe as a table.
+```
+mysql_engine = create_engine('mysql+pymysql://root:' + password + '@localhost:3306/securities')
+db_connection = mysql_engine.connect()
+```
+```
+try:
+    df.to_sql(security, db_connection, if_exists='replace');
+except ValueError as vx:
+    print(vx)
+except Exception as ex:
+    print(ex)
+else:
+    print('%s data stored successfully.'%security);
+finally:
+    db_connection.close()
+```
 
 
