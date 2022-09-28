@@ -8,7 +8,6 @@ image: /assets/images/database.jpg
 
 Have you ever wanted to store API data into your own database? If so, here's a quick tutorial on how to do it using Python. (Note: I use MySQL as my preffered database, but any other dialect of SQL will work with this tutorial as well--with a few tweaks that I'll mention.)
 
-
 ### Required Packages
 To get started, import the following packages into your Python script:
 
@@ -24,7 +23,7 @@ For this tutorial, I'll be pulling in BTC crypto data from polygon.io API. Whate
 
 The requests and json packages enable the user to import data from an API. All you need is a url to specify the source and any parameters needed to describe the desired data. (polygon.io provides this url, just copy-paste. You'll need a personal API key as well.)
 
-The following code pulls data from the API and stores it in a pandas dataframe called 'df':
+The following code pulls data from the API and stores it in a pandas dataframe called `df`:
 ```
 security = 'BTCUSD'
 url = 'https://api.polygon.io/v2/aggs/ticker/X:' + security + '/range/1/minute/2022-09-27/2022-09-27?adjusted=true&sort=asc&limit=1500&apiKey=' + api_key
@@ -52,16 +51,19 @@ mysql_engine = create_engine('mysql+pymysql://root:' + password + '@localhost:33
 db_connection = mysql_engine.connect()
 ```
 ```
-try:
-    df.to_sql(security, db_connection, if_exists='replace');
-except ValueError as vx:
-    print(vx)
-except Exception as ex:
-    print(ex)
-else:
-    print('%s data stored successfully.'%security);
-finally:
-    db_connection.close()
+df.to_sql(security, db_connection, if_exists='replace');
+db_connection.close()
 ```
+The `if_exisis` argument can take one of three options: `fail` (which is the default), `replace`, or `append`.
 
+Just like reading and writing to a file, make sure to close the database when done.
+
+That's it!
+
+### Additional Resources
+Here are some of the resources that I used to learn about this topic:
+- [Pandas DataFrames - Writing To And Reading From MySQL Table](https://pythontic.com/pandas/serialization/mysql#:~:text=Create%20a%20dataframe%20by%20calling,data%20from%20the%20pandas%20dataframe.)
+- [SQLAlchemy Engine Configuration](https://docs.sqlalchemy.org/en/14/core/engines.html)
+
+[Here](https://polygon.io/docs/crypto/getting-started) is a link to polygon.io's documentation used for the API call in my script.
 
