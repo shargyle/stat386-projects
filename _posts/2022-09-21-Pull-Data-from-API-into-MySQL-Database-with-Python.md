@@ -2,8 +2,8 @@
 layout: post
 title:  "Pull Data from API into MySQL Database with Python"
 author: Seth Argyle
-description: This tutorial shows how to use Python to pull data from an API and store it in tables in a MySQL database.
-image: /assets/images/database.jpg
+description: This tutorial teaches how to use Python to pull data from an API and store it in tables in a SQL database.
+image: /assets/images/python_sql.jpg
 ---
 
 Data is flooding the world. With it, we can gain insights and improve decision making. Although lots of data is available online through what is called an API ([Application Programming Interface](https://www.mulesoft.com/resources/api/what-is-an-api)), data science is much more easily accomplished when using data stored in SQL databases. With it stored in a database, data can be easily explored by either using simple SQL queries or quickly reading it into Python as [pandas](https://pandas.pydata.org/docs/index.html) dataframes.
@@ -45,7 +45,7 @@ Pandas [`to_datetime()`](https://pandas.pydata.org/docs/reference/api/pandas.to_
 df['date_timestamp'] = pd.to_datetime(df['unix_timestamp_msec'], unit='ms')
 ```
 
-### Store pandas dataframe as table in MySQL database
+### Store Pandas Dataframe as Table in MySQL database
 Now onto writing the pandas dataframe to a table in an SQL database. The [`create_engine()`](https://docs.sqlalchemy.org/en/14/core/engines.html) function from the sqlalchemy package is used to create a connection to an existing SQL databse, and the pandas dataframe [`to_sql()`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_sql.html) method is then used to write the dataframe to an SQL table within the database specified. Notice that my connection is to a MySQL database; however, this function works with other SQL dialects as well.
 ```
 mysql_engine = create_engine('mysql+pymysql://root:' + password + '@localhost:3306/securities') # insert password to your own SQL server
