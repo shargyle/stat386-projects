@@ -45,7 +45,7 @@ Pandas [`to_datetime()`](https://pandas.pydata.org/docs/reference/api/pandas.to_
 df['date_timestamp'] = pd.to_datetime(df['unix_timestamp_msec'], unit='ms')
 ```
 
-### Store pandas dataframe as table in MySQL database
+### Store Pandas Dataframe as Table in MySQL database
 Now onto writing the pandas dataframe to a table in an SQL database. The [`create_engine()`](https://docs.sqlalchemy.org/en/14/core/engines.html) function from the sqlalchemy package is used to create a connection to an existing SQL databse, and the pandas dataframe [`to_sql()`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_sql.html) method is then used to write the dataframe to an SQL table within the database specified. Notice that my connection is to a MySQL database; however, this function works with other SQL dialects as well.
 ```
 mysql_engine = create_engine('mysql+pymysql://root:' + password + '@localhost:3306/securities') # insert password to your own SQL server
