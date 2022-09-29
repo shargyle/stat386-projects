@@ -6,11 +6,11 @@ description: This tutorial shows how to use Python to pull data from an API and 
 image: /assets/images/database.jpg
 ---
 
-Data is flooding the world. With it, we can gain insights and improve decision making. Although lots of data is available online through what is called an API ([Application Programming Interface](https://www.mulesoft.com/resources/api/what-is-an-api)), data science is much more easily accomplished when using data stored in SQL databases.
+Data is flooding the world. With it, we can gain insights and improve decision making. Although lots of data is available online through what is called an API ([Application Programming Interface](https://www.mulesoft.com/resources/api/what-is-an-api)), data science is much more easily accomplished when using data stored in SQL databases. With it stored in a database, data can be easily explored by either using simple SQL queries or quickly reading it into Python as [pandas](https://pandas.pydata.org/docs/index.html) dataframes.
 
 In this tutorial, you will learn how to use Python to pull data from an API and store it in an SQL table. The following concepts are explained:
 - what Python packages are required.
-- how to make an API call and store the resulting data into a [pandas](https://pandas.pydata.org/docs/index.html) dataframe.
+- how to make an API call and store the resulting data into a pandas dataframe.
 - how to write a pandas dataframe to a table in an SQL database.
 
 ### Required Packages
