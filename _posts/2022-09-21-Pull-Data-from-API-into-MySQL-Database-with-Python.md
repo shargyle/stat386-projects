@@ -48,7 +48,7 @@ df['date_timestamp'] = pd.to_datetime(df['unix_timestamp_msec'], unit='ms')
 ```
 
 ### Store pandas dataframe as table in MySQL database
-Now onto writing the pandas dataframe to a table in an SQL database. The [`create_engine()`](https://docs.sqlalchemy.org/en/14/core/engines.html) function from the sqlalchemy package and pandas dataframe `to_sql()` method can be used to create a connection with an existing SQL database and then write the dataframe as a table.
+Now onto writing the pandas dataframe to a table in an SQL database. The [`create_engine()`](https://docs.sqlalchemy.org/en/14/core/engines.html) function from the sqlalchemy package is used to create a connection to an existing SQL databse, and the pandas dataframe [`to_sql()`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_sql.html) method is then used to write the dataframe to an SQL table within the database specified. Notice that my connection is to a MySQL database; however, this function works with other SQL dialects as well.
 ```
 mysql_engine = create_engine('mysql+pymysql://root:' + password + '@localhost:3306/securities') # insert password to your own SQL server
 db_connection = mysql_engine.connect()
@@ -57,6 +57,30 @@ db_connection = mysql_engine.connect()
 df.to_sql(security, db_connection, if_exists='replace');
 db_connection.close()
 ```
+Here is the code all together:
+```
+import requests
+import json
+import pandas as pd
+from sqlalchemy import create_engine
+
+url = 'https://api.polygon.io/v2/aggs/ticker/X:BTCUSD/range/1/minute/2022-09-27/2022-09-27?adjusted=true&sort=asc&limit=1500&apiKey=' + api_key # insert your own personal API key
+
+response = requests.request('GET', url)
+data = json.loads(response.text)
+df = pd.DataFrame(data['results'])
+
+df = df.rename(columns={'v':'trading_volume', 'vw':'volume_weighted_avg_price', 'o':'open_price', 'c':'close_price', 'h':'high', 'l':'low', 't':'unix_timestamp_msec', 'n':'num_transactions'})
+
+df['date_timestamp'] = pd.to_datetime(df['unix_timestamp_msec'], unit='ms')
+
+mysql_engine = create_engine('mysql+pymysql://root:' + password + '@localhost:3306/securities') # insert password to your own SQL server
+db_connection = mysql_engine.connect()
+
+df.to_sql(security, db_connection, if_exists='replace');
+db_connection.close()
+```
+
 ### Wrap Up
 Now you know how to pull data from an API and write it to your own SQL database! Please leave in the comments any questions you have about the concepts taught in this tutorial. In the near future, I plan on making another post that goes more in depth on API documentation and customizing the request.
 
