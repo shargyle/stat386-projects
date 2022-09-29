@@ -30,8 +30,6 @@ The [requests](https://pypi.org/project/requests/) and [json](https://docs.pytho
 The following code pulls data from the API and stores it in a pandas dataframe called `df`:
 ```
 url = 'https://api.polygon.io/v2/aggs/ticker/X:BTCUSD/range/1/minute/2022-09-27/2022-09-27?adjusted=true&sort=asc&limit=1500&apiKey=' + api_key # insert your own personal API key
-```
-```
 response = requests.request('GET', url)
 data = json.loads(response.text)
 df = pd.DataFrame(data['results'])
@@ -42,7 +40,7 @@ Oftentimes, the naming conventions pulled from the API are vague. Here, I simply
 df = df.rename(columns={'v':'trading_volume', 'vw':'volume_weighted_avg_price', 'o':'open_price', 'c':'close_price', 'h':'high', 'l':'low', 't':'unix_timestamp_msec', 'n':'num_transactions'})
 ```
 
-pandas `to_datetime()` function enables the user to convert a timestamp from unix to readable datetimes. Here, I add a column to my dataframe called `date_timestamp` that includes a datetime version of the unix timestamp (in Msec).
+Pandas [`to_datetime()`](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html) function enables the user to convert a timestamp from unix to readable datetimes. Here, I add a column to my dataframe called `date_timestamp` that includes a datetime version of the unix timestamp (in Msec).
 ```
 df['date_timestamp'] = pd.to_datetime(df['unix_timestamp_msec'], unit='ms')
 ```
