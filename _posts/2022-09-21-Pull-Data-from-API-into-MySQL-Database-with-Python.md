@@ -6,7 +6,7 @@ description: This tutorial shows how to use Python to pull data from an API and 
 image: /assets/images/database.jpg
 ---
 
-Have you ever wanted to store API data into your own database? If so, here's a quick tutorial on how to do it using Python. (Note: I use MySQL as my preffered database, but any other dialect of SQL will work with this tutorial as well--with a few tweaks that I'll mention.)
+Data is flooding the world. With it, we can gain insights and improve decision making. Although lots of data is available online through what is called an API (Application Programming Interface), data science is much more easily accomplished when using data stored in SQL databases.
 
 ### Required Packages
 To get started, import the following packages into your Python script:
