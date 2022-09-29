@@ -82,6 +82,6 @@ db_connection.close()
 ### Wrap Up
 Now you know how to pull data from an API and store it in your own SQL database! Please leave in the comments any questions you have about the concepts taught in this tutorial. In the near future, I plan on making another post that goes more in depth on API documentation and customizing the request.
 
-If you're interested in stock data, visit [polygon.io's API](https://polygon.io/stocks?gclid=CjwKCAjw4c-ZBhAEEiwAZ105RbQhjiUtali6QWg6WG8U655yxHvRZkzSiZkXO7u-BMsXTVsE0NYUlhoCY-QQAvD_BwE) to get started on pulling in your own data and begining to analyze trends in the market!
+If you're interested in stock data, visit [polygon.io's API](https://polygon.io/stocks?gclid=CjwKCAjw4c-ZBhAEEiwAZ105RbQhjiUtali6QWg6WG8U655yxHvRZkzSiZkXO7u-BMsXTVsE0NYUlhoCY-QQAvD_BwE) to get started on pulling in your own data and beginning to analyze trends in the market!
 
 
