@@ -6,7 +6,7 @@ description: This tutorial shows how to use Python to pull data from an API and 
 image: /assets/images/database.jpg
 ---
 
-Data is flooding the world. With it, we can gain insights and improve decision making. Although lots of data is available online through what is called an API (Application Programming Interface), data science is much more easily accomplished when using data stored in SQL databases.
+Data is flooding the world. With it, we can gain insights and improve decision making. Although lots of data is available online through what is called an API ([Application Programming Interface](https://www.mulesoft.com/resources/api/what-is-an-api)), data science is much more easily accomplished when using data stored in SQL databases.
 
 In this tutorial, you will learn how to use Python to pull data from an API and store it in an SQL table by understanding the following:
 - what Python packages are required.
@@ -29,8 +29,7 @@ The [requests](https://pypi.org/project/requests/) and [json](https://docs.pytho
 
 The following code pulls data from the API and stores it in a pandas dataframe called `df`:
 ```
-security = 'BTCUSD'
-url = 'https://api.polygon.io/v2/aggs/ticker/X:' + security + '/range/1/minute/2022-09-27/2022-09-27?adjusted=true&sort=asc&limit=1500&apiKey=' + api_key
+url = 'https://api.polygon.io/v2/aggs/ticker/X:BTCUSD/range/1/minute/2022-09-27/2022-09-27?adjusted=true&sort=asc&limit=1500&apiKey=' + api_key # insert your own personal API key
 ```
 ```
 response = requests.request('GET', url)
@@ -51,7 +50,7 @@ df['date_timestamp'] = pd.to_datetime(df['unix_timestamp_msec'], unit='ms')
 ### Store pandas dataframe as table in MySQL database
 Now onto writing the pandas dataframe to a table in an SQL database. The [`create_engine()`](https://docs.sqlalchemy.org/en/14/core/engines.html) function from the sqlalchemy package and pandas dataframe `to_sql()` method can be used to create a connection with an existing SQL database and then write the dataframe as a table.
 ```
-mysql_engine = create_engine('mysql+pymysql://root:' + password + '@localhost:3306/securities')
+mysql_engine = create_engine('mysql+pymysql://root:' + password + '@localhost:3306/securities') # insert password to your own SQL server
 db_connection = mysql_engine.connect()
 ```
 ```
