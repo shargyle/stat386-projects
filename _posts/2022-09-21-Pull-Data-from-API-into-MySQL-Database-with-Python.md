@@ -8,9 +8,13 @@ image: /assets/images/database.jpg
 
 Data is flooding the world. With it, we can gain insights and improve decision making. Although lots of data is available online through what is called an API (Application Programming Interface), data science is much more easily accomplished when using data stored in SQL databases.
 
+In this tutorial, you will learn how to use Python to pull data from an API and store it in an SQL table by understanding the following:
+- what Python packages are required.
+- how to make an API call and store the resulting data into a [pandas](https://pandas.pydata.org/docs/index.html) dataframe.
+- how to write a pandas dataframe to a table in an SQL database.
+
 ### Required Packages
 To get started, import the following packages into your Python script:
-
 ```
 import requests
 import json
@@ -21,7 +25,7 @@ from sqlalchemy import create_engine
 ### API Call
 For this tutorial, I'll be pulling in BTC crypto data from polygon.io API. Whatever data/API you choose, make sure you read the corresponding documentation so as to understand what data you're getting and how it's structured.
 
-The requests and json packages enable the user to import data from an API. All you need is a url to specify the source and any parameters needed to describe the desired data. (polygon.io provides this url, just copy-paste. You'll need a personal API key as well.)
+The [requests](https://pypi.org/project/requests/) and [json](https://docs.python.org/3/library/json.html) packages enable the user to import data from an API. All you need is a url to specify the source and any parameters needed to describe the desired data. (polygon.io provides this url, just copy-paste. You'll need a personal API key as well.)
 
 The following code pulls data from the API and stores it in a pandas dataframe called `df`:
 ```
