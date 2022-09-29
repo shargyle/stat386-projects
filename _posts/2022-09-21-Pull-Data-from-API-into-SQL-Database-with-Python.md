@@ -3,8 +3,10 @@ layout: post
 title:  "Pull Data from API into SQL Database with Python"
 author: Seth Argyle
 description: This tutorial teaches how to use Python to pull data from an API and store it in tables in an SQL database.
-image: /assets/images/python_sql.png
+image: <img src="/assets/images/python_sql.png" width="200" height="100">
 ---
+
+
 
 Data is flooding the world. With it, we can gain insights and improve decision making. Although lots of data is available online through what is called an API ([Application Programming Interface](https://www.mulesoft.com/resources/api/what-is-an-api)), data science is much more easily accomplished when using data stored in SQL databases. With it stored in a database, data can be easily explored by either using simple SQL queries or quickly reading it into Python as [pandas](https://pandas.pydata.org/docs/index.html) dataframes.
 
