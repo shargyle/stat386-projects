@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Pull Data from API into MySQL Database with Python"
+title:  "Pull Data from API into SQL Database with Python"
 author: Seth Argyle
 description: This tutorial teaches how to use Python to pull data from an API and store it in tables in a SQL database.
 image: /assets/images/python_sql.png
