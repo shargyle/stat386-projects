@@ -3,7 +3,7 @@ layout: post
 title:  "Pull Data from API into SQL Database with Python"
 author: Seth Argyle
 description: This tutorial teaches how to use Python to pull data from an API and store it in tables in an SQL database.
-image: <img src="/assets/images/python_sql.png" width="200" height="100">
+image: /assets/images/python_sql.png
 ---
 
 
