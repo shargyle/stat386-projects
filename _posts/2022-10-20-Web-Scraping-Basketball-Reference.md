@@ -14,6 +14,9 @@ I'll explain how to scrape this data from the web by doing the following:
 - dispalying code that scrapes the data and organizes it into a `pandas` dataframe.
 
 # Web Data
+### Target Table
+Here's a look at one of the data tables I'm looking to scrape from the site:
+![target table](/assets/images/Web-Scraping-Basketball-Reference/target_table.png)
 
 # The Code
 ### Packages
