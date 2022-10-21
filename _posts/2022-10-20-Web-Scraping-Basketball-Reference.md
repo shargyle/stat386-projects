@@ -40,8 +40,6 @@ On this page, each player's name is a link to their individual page where the ta
 
 Then, once I get each target table, I can combine them together to create one large dataframe.
 
-Here's a visual representation of the scraping process:
-
 <kbd>
     <img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/Web-Scraping-Basketball-Reference/flow.png" alt="flow"/>
 </kbd>
