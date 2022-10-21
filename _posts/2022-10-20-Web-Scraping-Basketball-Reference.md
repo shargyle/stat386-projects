@@ -3,7 +3,7 @@ layout: post
 title:  "Web Scraping Basketball Reference"
 date:   2022-10-20
 author: Seth Argyle
-description: In this post, you'll how to scrape player data from basketball-reference.com using Python.
+description: In this post, you'll learn how to scrape player data from basketball-reference.com using Python.
 image: /assets/images/basketball.jpg
 ---
 
