@@ -42,6 +42,13 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 ```
+
+
+
+
+
+
+
 ### Scraping
 Get links to all last name directories:
 ```
