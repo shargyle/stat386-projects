@@ -122,4 +122,4 @@ Next up, I'm going to posting about an exploratory data analysis on this scraped
 
 *What other aspects of the data do you think might be interesting to explore? Comment below with your suggestion.*
 
-
+chek
