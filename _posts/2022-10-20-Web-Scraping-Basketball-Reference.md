@@ -10,8 +10,8 @@ image: /assets/images/basketball.jpg
 I first became interested in statistics and data science because of my love for basketball. In the NBA, data is ubiquitous, and it's becoming more influential in managers' and coaches' decision making. Each basketball game has a resulting "box score", a table displaying descriptive numbers about the game at a team and player level (e.g. points scored, field goals made, rebounds, time played). Over the course of a season, a player's performance can be measured and tracked through the aggregation of these box scores. [Basketball Reference](https://www.basketball-reference.com) stores this insightful data for each player that has ever played in the NBA.
 
 I'll explain how to scrape this data from the web by doing the following:
-- Discussing unique obstacles presented by the website strucutre and how to overcome these issues.
-- Dispalying code that scrapes the data and organizes it into a pandas dataframe.
+- Discuss unique obstacles presented by the website structure and how to overcome these issues.
+- Display code that scrapes the data and organizes it into a pandas dataframe.
 
 # Web Data
 ### Target Table
@@ -52,7 +52,7 @@ import requests
 from bs4 import BeautifulSoup
 ```
 ### Scraping
-Get links to all last name directories:
+1. Get links to all last name directories:
 ```
 # get all last name directory links
     # links found in 'ul' tag with 'page_index' class
@@ -61,7 +61,7 @@ Get links to all last name directories:
 letter_links = bs.find('ul', {'class': 'page_index'}).find_all('a')
 letter_links = ['https://www.basketball-reference.com' + link.get('href') for link in letter_links if len(link.text) == 1]
 ```
-Get links to all individual pages:
+2. Get links to all individual pages:
 ```
 # get all player links from last name directory links
 
@@ -77,7 +77,7 @@ for letter_link in letter_links:
     player_tags = bs.find('tbody').find_all('th', {'scope': 'row', 'class': 'left'})
     player_links += ['https://www.basketball-reference.com' + player_tag.find('a').get('href') for player_tag in player_tags if player_tag.find('strong')]
 ```
-Get target table from each individual page, make dataframe:
+3. Get target table from each individual page, make dataframe:
 ```
 # build dataframe of all players' stats by season
 
