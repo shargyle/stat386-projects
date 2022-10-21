@@ -7,6 +7,10 @@ description: In this post, I explain how to scrape player data from basketball-r
 image: /assets/images/basketball.jpg
 ---
 
+I first became interested in statistics and data science because of my love for basketball. In the NBA, data is ubiquitous, and it's becoming more influential in managers' and coaches' decision making. Each basketball game has a resulting "box score", a table displaying descriptive numbers about the game at a team and player level (e.g. points scored, field goals made, rebounds, time played). Over the course of a season, a player's performance can be measured and tracked through the aggregation of these box scores. [Basketball Reference](https://www.basketball-reference.com/players/) stores this insightful data for each player that has ever played in the NBA.
+
+In this post, you'll learn how to scrape player data from [Basketball Reference](https://www.basketball-reference.com/players/) and store it as a csv file.
+
 # 
 
 # 
