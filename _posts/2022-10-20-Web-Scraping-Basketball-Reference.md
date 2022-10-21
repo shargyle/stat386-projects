@@ -43,7 +43,7 @@ Then, once I get each target table, I can combine them together to create one la
 Here's a visual representation of the scraping process:
 
 <kbd>
-    <img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/Web-Scraping-Basketball-Reference/flow.png" alt="flow" style="border: 3px solid black"/>
+    <img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/Web-Scraping-Basketball-Reference/flow.png" alt="flow"/>
 </kbd>
 
 # The Code
