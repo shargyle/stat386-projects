@@ -70,7 +70,7 @@ Get target table from each individual page, make dataframe:
 
 appended_data = []
 
-for player_link in tqdm(player_links):
+for player_link in player_links:
     dfs = pd.read_html(player_link)
     df = dfs[1]
 
@@ -90,3 +90,12 @@ Here's what the head of your dataframe will look if run correctly:
 <img src="/assets/images/Web-Scraping-Basketball-Reference/df.png" alt="dataframe head" width="550" height="125">
 
 # EDA Coming Soon
+Next up, I'm going to posting about an exploratory data analysis on this scraped data! Here are some questions I'll be considering:
+- Has the average age of a player in the NBA changed season over season? In other words, is the league becoming younger/older?
+- At what age and level of experience do players hit their peak performance in key statistical areas such as minutes per game, number of games in starting lineup, points per game, field goal percentage, etc.?
+- How is player performance impacted when switching teams?
+- When is the biggest leap in player performance? Biggest drop?
+
+
+
+
