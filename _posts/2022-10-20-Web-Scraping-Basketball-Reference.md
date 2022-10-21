@@ -126,3 +126,15 @@ Next up, I'm going to posting about an exploratory data analysis on this scraped
 - When is the biggest leap in player performance? Biggest drop?
 
 *What other aspects of the data do you think might be interesting to explore? Comment below with your suggestions.*
+
+
+
+
+{% highlight python %}
+
+here is some code
+
+{% end highlight %}
+
+
+
