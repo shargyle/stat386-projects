@@ -37,18 +37,12 @@ On this page, each player's name is a link to their individual page where the ta
 - **pandas**: to build pandas dataframe with player data
 - **requests**: to import website html code/info
 - **BeautifulSoup**: to navigate html code to desired data
+
 ```
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 ```
-
-
-
-
-
-
-
 ### Scraping
 Get links to all last name directories:
 ```
