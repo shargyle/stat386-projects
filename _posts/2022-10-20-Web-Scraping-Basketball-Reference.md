@@ -17,7 +17,7 @@ I'll explain how to scrape this data from the web by doing the following:
 ### Target Table
 Here's a look at one of the data tables I'm looking to scrape from the [site](https://www.basketball-reference.com/players/a/aldrila01.html):
 
-![](/assets/images/Web-Scraping-Basketball-Reference/directory.png)
+![testing](https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/Web-Scraping-Basketball-Reference/df.png)
 
 <img src="/assets/images/Web-Scraping-Basketball-Reference/target_table.png" alt="target table" width="550" height="350">
 
