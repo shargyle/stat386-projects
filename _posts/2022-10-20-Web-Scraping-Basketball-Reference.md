@@ -33,10 +33,12 @@ As you can see, this directory page contains links to each player page, categori
     <img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/Web-Scraping-Basketball-Reference/players.png" alt="players list" style="border: 3px solid black"/>
 </kbd>
 
-On this page, each player's name is a link to their individual page where the target table resides. So, my scraping algorithm will contain three components:
+On this page, each player's name is a link to their individual page where the target table resides. So, my scraping code will contain three components:
 1. Get links to all last name directories.
 2. Get links to all individual pages.
 3. Get target table from each individual page.
+
+Then, once I get each target table, I can combine them together to create one large dataframe.
 
 # The Code
 ### Packages
@@ -52,19 +54,23 @@ from bs4 import BeautifulSoup
 ### Scraping
 Get links to all last name directories:
 ```
-# get all last name directories
-players_url = 'https://www.basketball-reference.com/players/'
-r = requests.get(players_url)
-bs = BeautifulSoup(r.text)
-
+# get all last name directory links
+    # links found in 'ul' tag with 'page_index' class
+    # directory links will have a text with length 1 (e.g. "A")
+    # base url must be added to directory path
 letter_links = bs.find('ul', {'class': 'page_index'}).find_all('a')
 letter_links = ['https://www.basketball-reference.com' + link.get('href') for link in letter_links if len(link.text) == 1]
 ```
 Get links to all individual pages:
 ```
-# get all player links from last name directories
+# get all player links from last name directory links
+
+# initialize empty list of player links
 player_links = []
 
+# player links found in 'th' tag w/specific scope and class
+# active players with 'strong' tag
+# add base url
 for letter_link in letter_links:
     r = requests.get(letter_link)
     bs = BeautifulSoup(r.text)
@@ -75,25 +81,34 @@ Get target table from each individual page, make dataframe:
 ```
 # build dataframe of all players' stats by season
 
+# initialize empty list to which dfs will be appended
 appended_data = []
 
-for player_link in player_links:
+
+for player_link in tqdm(player_links):
+    # get tables from player page
     dfs = pd.read_html(player_link)
+    # save df as second table in html table code
     df = dfs[1]
 
+    # add player name as col
     r = requests.get(player_link)
     bs = BeautifulSoup(r.text)
     name = bs.find("div", {"id": "info", "class": "players"}).find("h1").text
     name = name.split('\n')[1]
 
     df['Name'] = name
+    # add years of experience (use index + 1)
     df['Exp'] = df.index + 1
 
+    # append individual df to list
     appended_data.append(df)
 
+# combine all dfs together
 nba = pd.concat(appended_data)
 ```
-Here's what the head of your dataframe will look if run correctly:
+
+Here's what the head of your dataframe will look like if run correctly:
 <kbd>
     <img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/Web-Scraping-Basketball-Reference/df.png" alt="dataframe head"/>
 </kbd>
@@ -105,6 +120,6 @@ Next up, I'm going to posting about an exploratory data analysis on this scraped
 - How is player performance impacted when switching teams?
 - When is the biggest leap in player performance? Biggest drop?
 
-
+*What other aspects of the data do you think might be interesting to explore? Comment below with your suggestion.*
 
 
