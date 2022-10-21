@@ -58,7 +58,7 @@ import requests
 from bs4 import BeautifulSoup
 ```
 ### Scraping
-1. Get links to all last name directories:
+*Get links to all last name directories:*
 ```
 # get all last name directory links
     # links found in 'ul' tag with 'page_index' class
@@ -67,8 +67,7 @@ from bs4 import BeautifulSoup
 letter_links = bs.find('ul', {'class': 'page_index'}).find_all('a')
 letter_links = ['https://www.basketball-reference.com' + link.get('href') for link in letter_links if len(link.text) == 1]
 ```
-
-2. Get links to all individual pages:
+*Get links to all individual pages:*
 ```
 # get all player links from last name directory links
 
@@ -84,8 +83,7 @@ for letter_link in letter_links:
     player_tags = bs.find('tbody').find_all('th', {'scope': 'row', 'class': 'left'})
     player_links += ['https://www.basketball-reference.com' + player_tag.find('a').get('href') for player_tag in player_tags if player_tag.find('strong')]
 ```
-
-3. Get target table from each individual page, make dataframe:
+*Get target table from each individual page, make dataframe:*
 ```
 # build dataframe of all players' stats by season
 
