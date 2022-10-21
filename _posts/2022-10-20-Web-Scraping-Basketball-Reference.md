@@ -91,7 +91,7 @@ nba = pd.concat(appended_data)
 Here's what the head of your dataframe will look if run correctly:
 <img src="/assets/images/Web-Scraping-Basketball-Reference/df.png" alt="dataframe head" width="550" height="125">
 
-<img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/Web-Scraping-Basketball-Reference/df.png" alt="dataframe head" width="550" height="125">
+<img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/Web-Scraping-Basketball-Reference/df.png" alt="dataframe head" width="550" height="125"/>
 
 # EDA Coming Soon
 Next up, I'm going to posting about an exploratory data analysis on this scraped data! Here are some questions I'll be considering:
