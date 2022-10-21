@@ -11,7 +11,7 @@ I first became interested in statistics and data science because of my love for 
 
 I'll explain how to scrape this data from the web by doing the following:
 - Discussing unique obstacles presented by the website strucutre and how to overcome these issues.
-- Dispalying code that scrapes the data and organizes it into a `pandas` dataframe.
+- Dispalying code that scrapes the data and organizes it into a pandas dataframe.
 
 # Web Data
 ### Target Table
