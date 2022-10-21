@@ -7,4 +7,10 @@ description: In this post, I explain how to scrape player data from basketball-r
 image: /assets/images/basketball.jpg
 ---
 
-Blog content
+# 
+
+# 
+
+# Challenges to Data
+
+# Coming Soon
