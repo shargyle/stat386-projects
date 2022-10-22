@@ -115,3 +115,8 @@ Next up, I'm going to be posting about an exploratory data analysis on this scra
 - When is the biggest leap in player performance? Biggest drop?
 
 *What other aspects of the data do you think might be interesting to explore? Comment below with your suggestions.*
+
+
+**Link to GitHub repo:** https://github.com/shargyle/NBA-Analysis
+
+**Note on ethics:** In the terms of service on Basketball Reference, it states that the data cannot be used to compete with the services that the site offers. Given that I'm using the data for analysis and do not intend on distributing it to anyone for the purpose of providing NBA data, I deemed it ethical to scrape data from the website.
