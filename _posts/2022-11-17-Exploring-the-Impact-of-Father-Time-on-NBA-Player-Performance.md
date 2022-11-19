@@ -61,6 +61,7 @@ Blocks per game tend to slowly decline from the very beginning of a player's car
 Steals rise and then fall, peaking between ages 23-30.
 
 ![3papg by age](/assets/images/3PA.png)
+https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/3PA.png
 
 Interestingly, as a player ages, he attempts more and more 3's (on average) until a dropoff at about age 33.
 
