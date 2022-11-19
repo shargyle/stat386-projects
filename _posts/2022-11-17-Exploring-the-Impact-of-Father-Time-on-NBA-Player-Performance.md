@@ -36,40 +36,39 @@ Now that I've explained the motivation for this data project, let's dive into th
 
 For each chart, age is displayed along the x axis, while the performance metric lies along the y axis. The size of the dot represents player count.
 
-![mpg by age](/assets/images/mp.png)
+<img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/mp.png" alt="MP"/>
 
 As a player ages, it seems like their playing time increases. However, it begins to decline at around age 32.
 
-![ppg by age](/assets/images/PTS.png)
+<img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/PTS.png" alt="PTS"/>
 
 Points per game increases over time until about age 29, then becomes sporadic due to small sample size. (I intend on adding more data points.)
 
-![rpg by age](/assets/images/TRB.png)
+<img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/TRB.png" alt="TRB"/>
 
 Rebounding doesn't seem to be influenced very much by age.
 
-![apg by age](/assets/images/AST.png)
+<img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/AST.png" alt="AST"/>
 
 Assists per game experience a consistent increase as a player ages, until dropping at about age 33.
 
-![bpg by age](/assets/images/BLK.png)
+<img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/BLK.png" alt="BLK"/>
 
 Blocks per game tend to slowly decline from the very beginning of a player's career (excepting a few outliers among older players--again, small sample size).
 
-![spg by age](/assets/images/STL.png)
+<img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/STL.png" alt="STL"/>
 
 Steals rise and then fall, peaking between ages 23-30.
 
-![3papg by age](/assets/images/3PA.png)
 <img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/3PA.png" alt="3PA"/>
 
 Interestingly, as a player ages, he attempts more and more 3's (on average) until a dropoff at about age 33.
 
-![efg% by age](/assets/images/eFGpct.png)
+<img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/eFGpct.png" alt="eFG%"/>
 
-![3pt% by age](/assets/images/3pct.png)
+<img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/3pct.png" alt="3PT%"/>
 
-![ft% by age](/assets/images/FTpct.png)
+<img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/FTpct.png" alt="FT%"/>
 
 All shooting accuracy metrics seem to increase steadily over the course of a player's career, with no dropoff towards in the latest years.
 
