@@ -12,4 +12,4 @@ image: /assets/images/hoop.jpg
 
 
 
-Here's link the repository containing the related data and scripts for the project: [https://github.com/shargyle/NBA-Analysis].
+Here's link the repository containing the related data and scripts for the project: https://github.com/shargyle/NBA-Analysis.
