@@ -14,7 +14,7 @@ One notable example is the Boston Celtics and their general manager at the time,
 
 So, was Danny Ainge simply lucky in trading his stars when he did? Should Brooklyn have anticipated this outcome? As all data scientists do, let's turn to the data. The following graphic shows NBA player performance by age. The metric representing "player performance" is WS/48, or [win shares per 48 minutes](https://alvin-almazov.com/basketball-eng/ws-48/). This is an estimate of the number of wins contributed by a player per 48 minutes and is often used to describe overall player impact. Specifically, the graph shows the distribution of ages at which players achieved their max WS/48.
 
-## The Graphic
+<img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/tab.png" alt="tableau graph"/>
 
 
 Click [here](https://github.com/shargyle/NBA-Analysis) to access the repository containing the related data and scripts for the project.
