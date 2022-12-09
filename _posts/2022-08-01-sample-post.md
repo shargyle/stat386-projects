@@ -16,5 +16,7 @@ So, was Danny Ainge simply lucky in trading his stars when he did? Should Brookl
 
 <img src="https://raw.githubusercontent.com/shargyle/stat386-projects/main/assets/images/tab.png" alt="tableau graph"/>
 
+As you can, players typcially peak between ages 25 and 36. Interestingly enough, the players Ainge traded were ages 36 and 37, right at the end of their peak and the beginning of their decline... perhaps Danny Ainge hired a data scientist to help him!
+
 
 Click [here](https://github.com/shargyle/NBA-Analysis) to access the repository containing the related data and scripts for the project.
